@@ -1,0 +1,158 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Sword Forge">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0B1B3A"/>
+      <stop offset="0.55" stop-color="#10275A"/>
+      <stop offset="1" stop-color="#071229"/>
+    </linearGradient>
+
+    <!-- outer flame: cool blue -->
+    <linearGradient id="f1" x1="0.5" y1="1" x2="0.5" y2="0">
+      <stop offset="0" stop-color="#1E4FCC"/>
+      <stop offset="0.45" stop-color="#377DFF"/>
+      <stop offset="1" stop-color="#7FC2FF"/>
+    </linearGradient>
+    <!-- inner flame: hotter, paler core -->
+    <linearGradient id="f2" x1="0.5" y1="1" x2="0.5" y2="0">
+      <stop offset="0" stop-color="#408AF5"/>
+      <stop offset="0.5" stop-color="#81C2FF"/>
+      <stop offset="1" stop-color="#C6E6FF"/>
+    </linearGradient>
+
+    <!-- blade: brushed steel, lit from the left -->
+    <linearGradient id="blade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8FA4BE"/>
+      <stop offset="0.34" stop-color="#F4F8FC"/>
+      <stop offset="0.52" stop-color="#FFFFFF"/>
+      <stop offset="0.68" stop-color="#C8D6E6"/>
+      <stop offset="1" stop-color="#6C819C"/>
+    </linearGradient>
+    <linearGradient id="guard" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#96681E"/>
+      <stop offset="0.30" stop-color="#F8D682"/>
+      <stop offset="0.55" stop-color="#D6A642"/>
+      <stop offset="1" stop-color="#865C18"/>
+    </linearGradient>
+    <linearGradient id="grip" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#243654"/>
+      <stop offset="0.5" stop-color="#3E5678"/>
+      <stop offset="1" stop-color="#1B2942"/>
+    </linearGradient>
+
+    <radialGradient id="glow" cx="0.5" cy="0.62" r="0.5">
+      <stop offset="0" stop-color="#5CA6FF" stop-opacity="0.62"/>
+      <stop offset="1" stop-color="#5CA6FF" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+  </defs>
+
+  <!-- background plate -->
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+
+  <!-- ambient glow behind the flame -->
+  <ellipse cx="256" cy="318" rx="190" ry="200" fill="url(#glow)"/>
+
+  <!-- outer flame -->
+  <path filter="url(#soft)" opacity="0.75" fill="url(#f1)" d="
+    M256 74
+    C300 150 352 186 372 246
+    C392 306 366 372 316 404
+    C332 358 322 330 300 310
+    C306 352 292 380 266 398
+    C282 350 268 322 246 302
+    C240 342 224 360 200 374
+    C214 336 206 314 190 296
+    C176 330 168 356 172 386
+    C132 350 116 296 132 244
+    C152 180 214 152 256 74 Z"/>
+  <path fill="url(#f1)" d="
+    M256 86
+    C296 158 344 192 362 248
+    C380 304 356 364 310 394
+    C324 350 316 324 296 306
+    C302 346 288 372 264 388
+    C279 344 266 318 246 300
+    C240 336 226 354 204 366
+    C217 330 210 310 195 294
+    C182 326 175 350 179 378
+    C142 344 128 294 143 246
+    C161 186 218 158 256 86 Z"/>
+
+  <!-- inner flame core -->
+  <path fill="url(#f2)" opacity="0.92" d="
+    M256 168
+    C282 214 310 238 318 274
+    C327 312 310 350 282 368
+    C290 340 285 324 273 312
+    C276 336 268 352 254 362
+    C263 334 255 318 243 306
+    C239 328 231 339 218 347
+    C226 324 222 312 213 302
+    C205 322 201 337 203 354
+    C182 332 175 300 185 270
+    C196 232 233 214 256 168 Z"/>
+
+  <!-- ============ the sword in the fire ============ -->
+  <g>
+    <!-- shadow: the steel is near-white and the flame core is pale, so the
+         two merge without this -->
+    <g filter="url(#soft)" opacity="0.62" fill="#06122C">
+      <path d="M256 377 L237 349 L237 137 L256 111 L275 137 L275 349 Z"/>
+      <rect x="148" y="354" width="216" height="42" rx="21"/>
+      <rect x="236" y="392" width="40" height="76" rx="14"/>
+      <circle cx="256" cy="470" r="25"/>
+    </g>
+    <!-- blade -->
+    <path fill="url(#blade)" d="
+      M256 372
+      L237 344
+      L237 132
+      L256 108
+      L275 132
+      L275 344 Z"/>
+    <!-- fuller (centre groove) -->
+    <rect x="252" y="132" width="8" height="206" fill="#8FA6C2" opacity="0.55"/>
+    <!-- edge highlight -->
+    <path fill="#FFFFFF" opacity="0.5" d="M256 108 L262 134 L262 340 L256 356 Z"/>
+
+    <!-- crossguard -->
+    <path fill="url(#guard)" d="
+      M150 372
+      C150 360 158 353 172 352
+      L340 352
+      C354 353 362 360 362 372
+      C362 384 354 391 340 392
+      L172 392
+      C158 391 150 384 150 372 Z"/>
+    <!-- guard bevel -->
+    <path fill="#FFF0C4" opacity="0.45" d="M164 358 L348 358 L348 366 L164 366 Z"/>
+
+    <!-- grip -->
+    <rect x="238" y="392" width="36" height="72" rx="13" fill="#22344F"/>
+    <rect x="238" y="392" width="15" height="72" rx="13" fill="#3B5678" opacity="0.85"/>
+    <!-- grip wrapping -->
+    <g fill="#0E1B2E" opacity="0.55">
+      <rect x="238" y="404" width="36" height="5"/>
+      <rect x="238" y="418" width="36" height="5"/>
+      <rect x="238" y="432" width="36" height="5"/>
+      <rect x="238" y="446" width="36" height="5"/>
+    </g>
+
+    <!-- pommel -->
+    <circle cx="256" cy="470" r="21" fill="url(#guard)"/>
+    <circle cx="250" cy="464" r="7" fill="#FFF3D0" opacity="0.6"/>
+  </g>
+
+  <!-- sparks -->
+  <g fill="#BFE0FF">
+    <circle cx="168" cy="196" r="5" opacity="0.85"/>
+    <circle cx="348" cy="214" r="4" opacity="0.7"/>
+    <circle cx="196" cy="140" r="3.5" opacity="0.6"/>
+    <circle cx="330" cy="150" r="3" opacity="0.5"/>
+    <circle cx="150" cy="268" r="3.5" opacity="0.55"/>
+    <circle cx="372" cy="292" r="3" opacity="0.45"/>
+  </g>
+</svg>
